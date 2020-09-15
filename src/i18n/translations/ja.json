@@ -1,0 +1,42 @@
+{
+  "common": {
+    "priceUnit": "円",
+    "cancel": "キャンセル",
+    "agree": "許可する",
+    "disagree": "許可しない",
+    "checkLater": "後で確認する",
+    "submit": "送信する",
+    "people": "人",
+    "edit": "編集",
+    "delete": "削除",
+    "register": "登録",
+    "update": "更新",
+    "deleteWarning": "{{modelName}}を削除してよろしいでしょうか？"
+  },
+  "error": {
+    "title": "エラーが発生しました",
+    "unexpected": "想定外のエラーが発生しました。"
+  },
+  "form": {
+    "errors": {
+      "number": "{{fieldName}}は数値で入力してください。",
+      "required": "{{fieldName}}を入力してください。",
+      "arrayMinLength": "{{fieldName}}が{{count}}個以上に入力してください。"
+    },
+    "optional": "※任意",
+    "required": "※必須"
+  },
+  "domain": {
+    "sample": {
+      "attributeName": {
+        "enums": {
+          "val1": "Val1",
+          "val2": "Val2"
+        }
+      }
+    }
+  },
+  "time": {
+    "format": {}
+  }
+}
