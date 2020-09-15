@@ -1,0 +1,161 @@
+{
+  "name": "hokusai-mobile",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "android": "react-native run-android",
+    "ios": "react-native run-ios",
+    "start": "react-native start",
+    "test": "jest",
+    "test:debug": "node --inspect='0.0.0.0:9229' --inspect-brk node_modules/.bin/jest --runInBand",
+    "test:coverage": "jest --coverage",
+    "lint:check": "eslint --ext .js,.jsx,.ts,.tsx .",
+    "lint": "eslint --ext .js,.jsx,.ts,.tsx --fix",
+    "lint:all": "eslint --ext .js,.jsx,.ts,.tsx --fix .",
+    "pretty": "prettier --write --loglevel silent",
+    "pretty:all": "prettier --write --loglevel silent '**/*.{json,yml,yaml,js,jsx,ts,tsx}'",
+    "redux:debug": "open 'rndebugger://set-debugger-loc?host=localhost&port=8081'",
+    "docs": "npx http-server -c-1 -p 6969 -o ./docs",
+    "mock": "npx @stoplight/prism-cli mock -h 0.0.0.0 -p 3100 ./docs/openapi.yaml",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
+  },
+  "dependencies": {
+    "@react-native-community/async-storage": "^1.12.0",
+    "@react-native-community/masked-view": "^0.1.10",
+    "@react-navigation/native": "^5.7.3",
+    "@react-navigation/stack": "^5.9.0",
+    "axios": "^0.20.0",
+    "formik": "^2.1.5",
+    "i18next": "^19.7.0",
+    "immer": "^7.0.9",
+    "lodash": "^4.17.20",
+    "moment": "^2.28.0",
+    "native-base": "^2.13.14",
+    "react": "16.13.1",
+    "react-i18next": "^11.7.2",
+    "react-native": "0.63.2",
+    "react-native-extended-stylesheet": "^0.12.0",
+    "react-native-gesture-handler": "^1.8.0",
+    "react-native-keyboard-manager": "^4.0.13-16",
+    "react-native-reanimated": "^1.13.0",
+    "react-native-safe-area-context": "^3.1.7",
+    "react-native-screens": "^2.10.1",
+    "react-redux": "^7.2.1",
+    "redux": "^4.0.5",
+    "redux-logger": "^3.0.6",
+    "redux-persist": "^6.0.0",
+    "redux-saga": "^1.1.3",
+    "reselect": "^4.0.0",
+    "yup": "^0.29.3"
+  },
+  "devDependencies": {
+    "@babel/core": "7.18.6",
+    "@babel/runtime": "^7.8.4",
+    "@storybook/addon-actions": "^6.0.21",
+    "@storybook/addon-essentials": "^6.0.21",
+    "@storybook/addon-links": "^6.0.21",
+    "@storybook/react-native": "^5.3.21",
+    "@storybook/react-native-server": "^5.3.21",
+    "@testing-library/jest-native": "^3.4.2",
+    "@testing-library/react-native": "^7.0.2",
+    "@types/jest": "^25.2.3",
+    "@types/lodash": "^4.14.161",
+    "@types/react-native": "^0.63.2",
+    "@types/react-redux": "^7.1.9",
+    "@types/react-test-renderer": "^16.9.2",
+    "@types/redux-logger": "^3.0.8",
+    "@typescript-eslint/eslint-plugin": "^4.1.1",
+    "@typescript-eslint/parser": "^4.1.1",
+    "babel-jest": "^25.1.0",
+    "babel-loader": "^8.1.0",
+    "babel-plugin-module-resolver": "^4.0.0",
+    "babel-plugin-transform-remove-console": "^6.9.4",
+    "eslint": "^7.9.0",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-import-resolver-typescript": "^2.3.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "^7.20.6",
+    "eslint-plugin-react-hooks": "^4.1.2",
+    "eslint-plugin-react-native": "^3.9.1",
+    "husky": ">=4",
+    "jest": "^25.1.0",
+    "jest-extended": "^0.11.5",
+    "lint-staged": ">=10",
+    "metro-react-native-babel-preset": "^0.59.0",
+    "prettier": "^2.1.1",
+    "react-dom": "^16.13.1",
+    "react-is": "^16.13.1",
+    "react-test-renderer": "16.13.1",
+    "typescript": "^3.8.3"
+  },
+  "jest": {
+    "preset": "react-native",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ],
+    "setupFilesAfterEnv": [
+      "jest-extended",
+      "@testing-library/jest-native/extend-expect"
+    ],
+    "setupFiles": [
+      "<rootDir>/node_modules/react-native-gesture-handler/jestSetup.js",
+      "<rootDir>/jest.setup.js"
+    ],
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+      "^@src/(.*)$": "<rootDir>/src/$1",
+      "^@assets/(.*)$": "<rootDir>/src/assets/$1"
+    },
+    "collectCoverageFrom": [
+      "src/**/*.ts",
+      "src/**/*.tsx",
+      "!src/config/**/*",
+      "!src/assets/**/*",
+      "!src/i18n/*",
+      "!src/types/**/*",
+      "!**/*styles.ts",
+      "!**/*index.ts",
+      "!**/types/*",
+      "!**/__tests__/*",
+      "!**/__mocks__/*",
+      "!**/sharedExamples.ts",
+      "!**/libs/**"
+    ],
+    "testPathIgnorePatterns": [
+      ".*/__tests__/.*.support.ts",
+      ".*/sharedExamples.ts",
+      ".*/libs/.*"
+    ],
+    "transformIgnorePatterns": [
+      "/node_modules/(?!native-base)/"
+    ],
+    "coverageReporters": [
+      "text",
+      "cobertura",
+      "lcov"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "yarn lint",
+      "yarn pretty"
+    ],
+    "*.(yml|yaml|json)": [
+      "yarn pretty"
+    ]
+  }
+}
