@@ -18,27 +18,28 @@
     "docs": "npx http-server -c-1 -p 6969 -o ./docs",
     "mock": "npx @stoplight/prism-cli mock -h 0.0.0.0 -p 3100 ./docs/openapi.yaml",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@react-native-community/async-storage": "^1.12.0",
     "@react-native-community/masked-view": "^0.1.10",
     "@react-navigation/native": "^5.7.3",
     "@react-navigation/stack": "^5.9.0",
-    "axios": "^0.20.0",
+    "axios": "0.21.2",
     "formik": "^2.1.5",
     "i18next": "^19.7.0",
-    "immer": "^7.0.9",
+    "immer": "9.0.6",
     "lodash": "^4.17.20",
     "moment": "^2.28.0",
     "native-base": "^2.13.14",
     "react": "16.13.1",
     "react-i18next": "^11.7.2",
-    "react-native": "0.63.2",
+    "react-native": "0.63.5",
     "react-native-extended-stylesheet": "^0.12.0",
     "react-native-gesture-handler": "^1.8.0",
     "react-native-keyboard-manager": "^4.0.13-16",
-    "react-native-reanimated": "^1.13.0",
+    "react-native-reanimated": "^2.10.0",
     "react-native-safe-area-context": "^3.1.7",
     "react-native-screens": "^2.10.1",
     "react-redux": "^7.2.1",
@@ -81,7 +82,7 @@
     "eslint-plugin-react": "^7.20.6",
     "eslint-plugin-react-hooks": "^4.1.2",
     "eslint-plugin-react-native": "^3.9.1",
-    "husky": ">=4",
+    "husky": "^8.0.0",
     "jest": "^25.1.0",
     "jest-extended": "^0.11.5",
     "lint-staged": ">=10",
@@ -143,11 +144,6 @@
       "cobertura",
       "lcov"
     ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
